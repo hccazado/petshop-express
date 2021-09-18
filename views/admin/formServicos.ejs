@@ -1,0 +1,20 @@
+<%- include("../partials/header") %>
+<section class="Admin">
+    <h2>Painel Cadastro Serviço</h2>
+
+    <div class="container">
+        <form action="/admin/servicos/cadastrar" method="POST">
+            <label for="id">ID:</label>
+            <input type="text" name="id" id="id">
+            <label for="nome">Nome:</label>
+            <input type="text" name="nome" id="nome">
+            <label for="preco">Preço:</label>
+            <input type="text" name="preco" id="preco">
+            <label for="nome">Descrição:</label>
+            <textarea name="descricao" id="descricao">
+            </textarea>
+            <button type="submit">Cadastrar</button>
+        </form>
+    </div>
+</section>
+<%- include("../partials/footer") %>

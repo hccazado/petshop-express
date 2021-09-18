@@ -1,0 +1,31 @@
+<%- include("../partials/header") %>
+<section class="Admin">
+    <h2>Painel Administrativo</h2>
+    <a href="/admin/servicos/cadastrar">Cadastrar novo serviço</a>
+    <div class="container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Preço</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for(let i=0; i < servicos.length; i++) { %>
+                    <tr>
+                        <td><%=servicos[i].nome %></td>
+                        <td><%=servicos[i].preco %></td>
+                        <td><a href="/admin/servicos/editar/<%=servicos[i].id%>">Editar</a></td>
+                        <!--<td><a href="/admin/servicos/excluir/<%=servicos[i].id%>">Excluir</a></td>-->
+                        <td><form action="/admin/servicos/excluir/<%=servicos[i].id%>" method="POST">
+                            <button type="submit">Excluir</button>
+                        </form></td>
+                    </tr>
+                    <% } %>
+            </tbody>
+        </table>
+    </div>
+</section>
+<%- include("../partials/footer") %>

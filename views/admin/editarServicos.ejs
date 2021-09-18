@@ -1,0 +1,21 @@
+<%- include("../partials/header") %>
+<section class="Admin">
+    <h2>Painel Cadastro Serviço</h2>
+
+    <div class="container">
+        <form action="/admin/servicos/editar/<%=servico.id%>" method="POST">
+            <label for="id">ID:</label>
+            <input type="text" name="id" id="id" value="<%=servico.id%>" readonly>
+            <label for="nome">Nome:</label>
+            <input type="text" name="nome" id="nome" value="<%=servico.nome%>">
+            <label for="preco">Preço:</label>
+            <input type="text" name="preco" id="preco" value="<%=servico.preco%>">
+            <label for="nome">Descrição:</label>
+            <textarea name="descricao" id="descricao">
+                <%=servico.descricao%>
+            </textarea>
+            <button type="submit">Editar</button>
+        </form>
+    </div>
+</section>
+<%- include("../partials/footer") %>
